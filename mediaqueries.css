@@ -165,3 +165,54 @@
     font-size: 1.25rem;
   }
 }
+/* CERTIFICATES RESPONSIVE */
+
+@media screen and (max-width: 1200px) {
+  #certificates {
+    margin: 0 5%;
+  }
+  .cert-card {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .certificates-container {
+    gap: 1rem;
+  }
+  .cert-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+    gap: 0.75rem;
+  }
+  .cert-icon {
+    font-size: 2rem;
+  }
+  .cert-info h3 {
+    font-size: 0.95rem;
+  }
+  .cert-issuer {
+    font-size: 0.8rem;
+  }
+  .cert-date {
+    font-size: 0.75rem;
+  }
+  .cert-skills {
+    font-size: 0.72rem;
+  }
+  .cert-btn {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cert-card {
+    padding: 1rem;
+  }
+  .cert-info h3 {
+    font-size: 0.88rem;
+  }
+}
