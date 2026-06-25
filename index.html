@@ -250,6 +250,104 @@
       </div>
       <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
     </section>
+     <section id="certificates">
+  <p class="section__text__p1">My</p>
+  <h1 class="title">Certificates</h1>
+  <div class="certificates-container">
+
+    <div class="cert-card">
+      <div class="cert-icon">🇬🇧</div>
+      <div class="cert-info">
+        <h3>EnglishScore B2 — Upper Intermediate</h3>
+        <p class="cert-issuer">British Council · EnglishScore</p>
+        <p class="cert-date">March 2026</p>
+        <p class="cert-skills">Grammar · Vocabulary · Reading · Listening</p>
+      </div>
+      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-english').classList.add('open')">View</button>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🇫🇷</div>
+      <div class="cert-info">
+        <h3>TCF B2 — Test de Connaissance du Français</h3>
+        <p class="cert-issuer">France Éducation International</p>
+        <p class="cert-date">September 2025 · Valid until September 2027</p>
+        <p class="cert-skills">Compréhension orale · Compréhension écrite · Structures de la langue</p>
+      </div>
+      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-tcf').classList.add('open')">View</button>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🔒</div>
+      <div class="cert-info">
+        <h3>Cybersecurity Foundations</h3>
+        <p class="cert-issuer">LinkedIn Learning</p>
+        <p class="cert-date">October 2025</p>
+        <p class="cert-skills">Cybersecurity · Network Security · Threat Analysis</p>
+      </div>
+      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-cyber').classList.add('open')">View</button>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🤖</div>
+      <div class="cert-info">
+        <h3>Machine Learning with Python: Foundations</h3>
+        <p class="cert-issuer">LinkedIn Learning</p>
+        <p class="cert-date">July 2025</p>
+        <p class="cert-skills">Machine Learning · Python · Data Science</p>
+      </div>
+      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-ml').classList.add('open')">View</button>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🧠</div>
+      <div class="cert-info">
+        <h3>Deep Learning: Getting Started</h3>
+        <p class="cert-issuer">LinkedIn Learning</p>
+        <p class="cert-date">June 2025</p>
+        <p class="cert-skills">Deep Learning · Neural Networks · AI</p>
+      </div>
+      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-dl').classList.add('open')">View</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATE MODALS -->
+<div id="modal-english" class="cv-modal">
+  <div class="cv-modal-inner">
+    <span class="cv-modal-close" onclick="document.getElementById('modal-english').classList.remove('open')">&times;</span>
+    <iframe src="./assets/cert-english.pdf#toolbar=0" class="cv-iframe"></iframe>
+  </div>
+</div>
+
+<div id="modal-tcf" class="cv-modal">
+  <div class="cv-modal-inner">
+    <span class="cv-modal-close" onclick="document.getElementById('modal-tcf').classList.remove('open')">&times;</span>
+    <iframe src="./assets/cert-tcf.pdf#toolbar=0" class="cv-iframe"></iframe>
+  </div>
+</div>
+
+<div id="modal-cyber" class="cv-modal">
+  <div class="cv-modal-inner">
+    <span class="cv-modal-close" onclick="document.getElementById('modal-cyber').classList.remove('open')">&times;</span>
+    <img src="./assets/cert-cybersecurity.png" style="width:100%; border-radius:0.5rem;" />
+  </div>
+</div>
+
+<div id="modal-ml" class="cv-modal">
+  <div class="cv-modal-inner">
+    <span class="cv-modal-close" onclick="document.getElementById('modal-ml').classList.remove('open')">&times;</span>
+    <img src="./assets/cert-ml.png" style="width:100%; border-radius:0.5rem;" />
+  </div>
+</div>
+
+<div id="modal-dl" class="cv-modal">
+  <div class="cv-modal-inner">
+    <span class="cv-modal-close" onclick="document.getElementById('modal-dl').classList.remove('open')">&times;</span>
+    <img src="./assets/cert-deeplearning.png" style="width:100%; border-radius:0.5rem;" />
+  </div>
+</div>
 
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
@@ -291,6 +389,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+             <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
