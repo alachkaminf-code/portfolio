@@ -1,11 +1,12 @@
 /* =========================================================
    PORTFOLIO SCRIPT
-   1. Hamburger menu (mobile nav)
-   2. Dark / light mode toggle (persisted)
+   1. Hamburger menu
+   2. Dark / light mode toggle (persisted with localStorage)
    3. Scroll-triggered fade-in animations
-   4. Project filters (by tech tag)
-   5. Image lightbox for project screenshots
-   6. Contact form (Formspree, no page reload)
+   4. Project filters
+   5. Image lightbox
+   6. Contact form (Formspree)
+   7. CV modal + Certificate modals
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,25 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectFilters();
   initLightbox();
   initContactForm();
+  initCvModal();
 });
 
-/* ---------------------------------------------------------
-   1. HAMBURGER MENU
-   --------------------------------------------------------- */
+/* 1. HAMBURGER MENU */
 function initHamburgerMenu() {
   const hamburgerIcon = document.getElementById("hamburger-icon");
   const menuLinks = document.getElementById("menu-links");
-
   if (!hamburgerIcon || !menuLinks) return;
-
   const toggleMenu = () => {
     menuLinks.classList.toggle("open");
     hamburgerIcon.classList.toggle("open");
   };
-
   hamburgerIcon.addEventListener("click", toggleMenu);
-
-  // Close the menu whenever a nav link inside it is clicked
   menuLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       menuLinks.classList.remove("open");
@@ -42,9 +37,7 @@ function initHamburgerMenu() {
   });
 }
 
-/* ---------------------------------------------------------
-   2. DARK / LIGHT MODE TOGGLE
-   --------------------------------------------------------- */
+/* 2. DARK / LIGHT MODE TOGGLE — persisted with localStorage */
 function initThemeToggle() {
   const desktopToggle = document.getElementById("theme-toggle");
   const mobileToggle = document.getElementById("theme-toggle-mobile");
@@ -59,31 +52,26 @@ function initThemeToggle() {
     document.querySelectorAll(".theme-icon").forEach((icon) => {
       icon.textContent = theme === "dark" ? "☀️" : "🌙";
     });
+    try { localStorage.setItem("theme", theme); } catch (_) {}
   };
 
-  // In-memory only (no localStorage available in this preview environment).
-  // On a real hosted site (GitHub Pages / Vercel) this can safely use
-  // localStorage.getItem("theme") / localStorage.setItem("theme", ...) instead.
-  let currentTheme = "light";
-  applyTheme(currentTheme);
+  let savedTheme = "light";
+  try { savedTheme = localStorage.getItem("theme") || "light"; } catch (_) {}
+  applyTheme(savedTheme);
 
   const toggle = () => {
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
-    applyTheme(currentTheme);
+    const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    applyTheme(current === "dark" ? "light" : "dark");
   };
 
   if (desktopToggle) desktopToggle.addEventListener("click", toggle);
   if (mobileToggle) mobileToggle.addEventListener("click", toggle);
 }
 
-/* ---------------------------------------------------------
-   3. SCROLL-TRIGGERED FADE-IN ANIMATIONS
-   --------------------------------------------------------- */
+/* 3. SCROLL FADE-IN */
 function initScrollAnimations() {
   const sections = document.querySelectorAll("section");
-
   sections.forEach((section) => section.classList.add("fade-in-section"));
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -95,26 +83,19 @@ function initScrollAnimations() {
     },
     { threshold: 0.15 }
   );
-
   sections.forEach((section) => observer.observe(section));
 }
 
-/* ---------------------------------------------------------
-   4. PROJECT FILTERS
-   --------------------------------------------------------- */
+/* 4. PROJECT FILTERS */
 function initProjectFilters() {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
-
   if (!filterButtons.length) return;
-
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
-
       const filter = button.dataset.filter;
-
       projectCards.forEach((card) => {
         const tags = card.dataset.tags || "";
         const matches = filter === "all" || tags.includes(filter);
@@ -124,68 +105,46 @@ function initProjectFilters() {
   });
 }
 
-/* ---------------------------------------------------------
-   5. LIGHTBOX FOR PROJECT IMAGES
-   --------------------------------------------------------- */
+/* 5. LIGHTBOX */
 function initLightbox() {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.getElementById("lightbox-close");
-
   if (!lightbox || !lightboxImg) return;
-
   window.openLightbox = (src) => {
     lightboxImg.src = src;
     lightbox.classList.add("open");
   };
-
   const close = () => lightbox.classList.remove("open");
-
   if (closeBtn) closeBtn.addEventListener("click", close);
-
-  // Click outside the image closes it too
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) close();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
-  });
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 }
 
-/* ---------------------------------------------------------
-   6. CONTACT FORM (Formspree, AJAX submit)
-   --------------------------------------------------------- */
+/* 6. CONTACT FORM */
 function initContactForm() {
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
   const submitBtn = document.getElementById("form-submit-btn");
-
   if (!form) return;
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const action = form.getAttribute("action") || "";
     if (action.includes("YOUR_FORM_ID")) {
-      status.textContent =
-        "Contact form isn't connected yet — replace YOUR_FORM_ID in the form's action with your real Formspree endpoint.";
+      status.textContent = "Contact form isn't connected yet — replace YOUR_FORM_ID with your real Formspree endpoint.";
       status.className = "form-status error";
       return;
     }
-
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
     status.textContent = "";
     status.className = "form-status";
-
     try {
       const response = await fetch(action, {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
-
       if (response.ok) {
         status.textContent = "Thanks! Your message has been sent.";
         status.className = "form-status success";
@@ -200,6 +159,31 @@ function initContactForm() {
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Send Message";
+    }
+  });
+}
+
+/* 7. CV MODAL + CERTIFICATE MODALS */
+function initCvModal() {
+  const allModals = document.querySelectorAll(".cv-modal");
+
+  allModals.forEach((modal) => {
+    // Close when clicking the X button inside
+    const closeBtn = modal.querySelector(".cv-modal-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => modal.classList.remove("open"));
+    }
+
+    // Close when clicking outside the inner box
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("open");
+    });
+  });
+
+  // Close any open modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      allModals.forEach((modal) => modal.classList.remove("open"));
     }
   });
 }
