@@ -16,6 +16,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -39,6 +40,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -54,9 +56,7 @@
         <h1 class="title">Yacine Lachkhem</h1>
         <p class="section__text__p2">Full-Stack Developer</p>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="document.getElementById('cv-modal').classList.add('open')">
-            View CV
-          </button>
+          <button class="btn btn-color-2" onclick="openModal('cv-modal')">View CV</button>
           <a href="#contact" class="btn btn-color-1">Contact Info</a>
         </div>
         <div id="socials-container">
@@ -92,12 +92,12 @@
           </div>
           <div class="text-container">
             <p>
-              I'm a Computer Science graduate from Laghouat, Algeria, passionate about building 
-              modern and impactful web applications. Over the past 3 years I've developed strong 
-              skills in React, TypeScript, Firebase, and Tailwind CSS. My main project, EduLingua, 
-              is a full-stack language learning platform combining AI-powered self-study tools with 
-              a real teacher marketplace — built specifically for Arabic speakers learning European 
-              languages. I love solving real problems with clean code and I'm always looking for 
+              I'm a Computer Science graduate from Laghouat, Algeria, passionate about building
+              modern and impactful web applications. Over the past 3 years I've developed strong
+              skills in React, TypeScript, Firebase, and Tailwind CSS. My main project, EduLingua,
+              is a full-stack language learning platform combining AI-powered self-study tools with
+              a real teacher marketplace — built specifically for Arabic speakers learning European
+              languages. I love solving real problems with clean code and I'm always looking for
               the next challenge to grow as a developer.
             </p>
           </div>
@@ -191,37 +191,23 @@
         <div class="about-containers" id="projects-grid">
           <div class="details-container color-container project-card" data-tags="react firebase">
             <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="EduLingua app screenshot"
-                class="project-img"
-                onclick="openLightbox('./assets/project-1.png')"
-              />
+              <img src="./assets/project-1.png" alt="EduLingua app screenshot" class="project-img" onclick="openLightbox('./assets/project-1.png')" />
             </div>
             <h2 class="experience-sub-title project-title">EduLingua</h2>
             <p class="project-description">
-              Full-stack language learning platform built with React, TypeScript & Firebase. 
-              Features an AI chatbot tutor, flashcards, quizzes, speaking practice, CEFR placement test, 
+              Full-stack language learning platform built with React, TypeScript & Firebase.
+              Features an AI chatbot tutor, flashcards, quizzes, speaking practice, CEFR placement test,
               and a teacher marketplace with 1-on-1 booking — designed for Arabic speakers learning European languages.
-              <br /><span style="font-size:0.8rem; color: gray;">2025 — 2026</span>
+              <br /><span style="font-size:0.8rem; color:gray;">2025 — 2026</span>
             </p>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/alachkaminf-code/lingualearn', '_blank')">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://lingualearn-ruby.vercel.app/', '_blank')">
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/alachkaminf-code/lingualearn', '_blank')">Github</button>
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://lingualearn-ruby.vercel.app/', '_blank')">Live Demo</button>
             </div>
           </div>
           <div class="details-container color-container project-card" data-tags="html-css">
             <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-                onclick="openLightbox('./assets/project-2.png')"
-              />
+              <img src="./assets/project-2.png" alt="Project 2" class="project-img" onclick="openLightbox('./assets/project-2.png')" />
             </div>
             <h2 class="experience-sub-title project-title">Project Two</h2>
             <p class="project-description">Coming soon — in progress.</p>
@@ -232,12 +218,7 @@
           </div>
           <div class="details-container color-container project-card" data-tags="html-css">
             <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-                onclick="openLightbox('./assets/project-3.png')"
-              />
+              <img src="./assets/project-3.png" alt="Project 3" class="project-img" onclick="openLightbox('./assets/project-3.png')" />
             </div>
             <h2 class="experience-sub-title project-title">Project Three</h2>
             <p class="project-description">Coming soon — in progress.</p>
@@ -248,106 +229,65 @@
           </div>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#certificates'" />
     </section>
-     <section id="certificates">
-  <p class="section__text__p1">My</p>
-  <h1 class="title">Certificates</h1>
-  <div class="certificates-container">
 
-    <div class="cert-card">
-      <div class="cert-icon">🇬🇧</div>
-      <div class="cert-info">
-        <h3>EnglishScore B2 — Upper Intermediate</h3>
-        <p class="cert-issuer">British Council · EnglishScore</p>
-        <p class="cert-date">March 2026</p>
-        <p class="cert-skills">Grammar · Vocabulary · Reading · Listening</p>
+    <section id="certificates">
+      <p class="section__text__p1">My</p>
+      <h1 class="title">Certificates</h1>
+      <div class="certificates-container">
+        <div class="cert-card">
+          <div class="cert-icon">🇬🇧</div>
+          <div class="cert-info">
+            <h3>EnglishScore B2 — Upper Intermediate</h3>
+            <p class="cert-issuer">British Council · EnglishScore</p>
+            <p class="cert-date">March 2026</p>
+            <p class="cert-skills">Grammar · Vocabulary · Reading · Listening</p>
+          </div>
+          <button class="btn btn-color-2 cert-btn" onclick="openModal('modal-english')">View</button>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🇫🇷</div>
+          <div class="cert-info">
+            <h3>TCF B2 — Test de Connaissance du Français</h3>
+            <p class="cert-issuer">France Éducation International</p>
+            <p class="cert-date">September 2025 · Valid until September 2027</p>
+            <p class="cert-skills">Compréhension orale · Compréhension écrite · Structures de la langue</p>
+          </div>
+          <button class="btn btn-color-2 cert-btn" onclick="openModal('modal-tcf')">View</button>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🔒</div>
+          <div class="cert-info">
+            <h3>Cybersecurity Foundations</h3>
+            <p class="cert-issuer">LinkedIn Learning</p>
+            <p class="cert-date">October 2025</p>
+            <p class="cert-skills">Cybersecurity · Network Security · Threat Analysis</p>
+          </div>
+          <button class="btn btn-color-2 cert-btn" onclick="openModal('modal-cyber')">View</button>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🤖</div>
+          <div class="cert-info">
+            <h3>Machine Learning with Python: Foundations</h3>
+            <p class="cert-issuer">LinkedIn Learning</p>
+            <p class="cert-date">July 2025</p>
+            <p class="cert-skills">Machine Learning · Python · Data Science</p>
+          </div>
+          <button class="btn btn-color-2 cert-btn" onclick="openModal('modal-ml')">View</button>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🧠</div>
+          <div class="cert-info">
+            <h3>Deep Learning: Getting Started</h3>
+            <p class="cert-issuer">LinkedIn Learning</p>
+            <p class="cert-date">June 2025</p>
+            <p class="cert-skills">Deep Learning · Neural Networks · AI</p>
+          </div>
+          <button class="btn btn-color-2 cert-btn" onclick="openModal('modal-dl')">View</button>
+        </div>
       </div>
-      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-english').classList.add('open')">View</button>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🇫🇷</div>
-      <div class="cert-info">
-        <h3>TCF B2 — Test de Connaissance du Français</h3>
-        <p class="cert-issuer">France Éducation International</p>
-        <p class="cert-date">September 2025 · Valid until September 2027</p>
-        <p class="cert-skills">Compréhension orale · Compréhension écrite · Structures de la langue</p>
-      </div>
-      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-tcf').classList.add('open')">View</button>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🔒</div>
-      <div class="cert-info">
-        <h3>Cybersecurity Foundations</h3>
-        <p class="cert-issuer">LinkedIn Learning</p>
-        <p class="cert-date">October 2025</p>
-        <p class="cert-skills">Cybersecurity · Network Security · Threat Analysis</p>
-      </div>
-      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-cyber').classList.add('open')">View</button>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🤖</div>
-      <div class="cert-info">
-        <h3>Machine Learning with Python: Foundations</h3>
-        <p class="cert-issuer">LinkedIn Learning</p>
-        <p class="cert-date">July 2025</p>
-        <p class="cert-skills">Machine Learning · Python · Data Science</p>
-      </div>
-      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-ml').classList.add('open')">View</button>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🧠</div>
-      <div class="cert-info">
-        <h3>Deep Learning: Getting Started</h3>
-        <p class="cert-issuer">LinkedIn Learning</p>
-        <p class="cert-date">June 2025</p>
-        <p class="cert-skills">Deep Learning · Neural Networks · AI</p>
-      </div>
-      <button class="btn btn-color-2 cert-btn" onclick="document.getElementById('modal-dl').classList.add('open')">View</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- CERTIFICATE MODALS -->
-<div id="modal-english" class="cv-modal">
-  <div class="cv-modal-inner">
-    <span class="cv-modal-close" onclick="document.getElementById('modal-english').classList.remove('open')">&times;</span>
-    <iframe src="./assets/cert-english.pdf#toolbar=0" class="cv-iframe"></iframe>
-  </div>
-</div>
-
-<div id="modal-tcf" class="cv-modal">
-  <div class="cv-modal-inner">
-    <span class="cv-modal-close" onclick="document.getElementById('modal-tcf').classList.remove('open')">&times;</span>
-    <iframe src="./assets/cert-tcf.pdf#toolbar=0" class="cv-iframe"></iframe>
-  </div>
-</div>
-
-<div id="modal-cyber" class="cv-modal">
-  <div class="cv-modal-inner">
-    <span class="cv-modal-close" onclick="document.getElementById('modal-cyber').classList.remove('open')">&times;</span>
-    <img src="./assets/cert-cybersecurity.png" style="width:100%; border-radius:0.5rem;" />
-  </div>
-</div>
-
-<div id="modal-ml" class="cv-modal">
-  <div class="cv-modal-inner">
-    <span class="cv-modal-close" onclick="document.getElementById('modal-ml').classList.remove('open')">&times;</span>
-    <img src="./assets/cert-ml.png" style="width:100%; border-radius:0.5rem;" />
-  </div>
-</div>
-
-<div id="modal-dl" class="cv-modal">
-  <div class="cv-modal-inner">
-    <span class="cv-modal-close" onclick="document.getElementById('modal-dl').classList.remove('open')">&times;</span>
-    <img src="./assets/cert-deeplearning.png" style="width:100%; border-radius:0.5rem;" />
-  </div>
-</div>
+    </section>
 
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
@@ -375,9 +315,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn btn-color-1 form-submit-btn" id="form-submit-btn">
-          Send Message
-        </button>
+        <button type="submit" class="btn btn-color-1 form-submit-btn" id="form-submit-btn">Send Message</button>
         <p id="form-status" class="form-status"></p>
       </form>
     </section>
@@ -389,7 +327,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-             <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -406,8 +344,44 @@
     <!-- CV MODAL -->
     <div id="cv-modal" class="cv-modal">
       <div class="cv-modal-inner">
-        <span class="cv-modal-close" id="cv-modal-close">&times;</span>
+        <span class="cv-modal-close" onclick="closeModal('cv-modal')">&times;</span>
         <iframe src="./assets/CV_yacine_lachkhem.pdf#toolbar=0" class="cv-iframe"></iframe>
+      </div>
+    </div>
+
+    <!-- CERTIFICATE MODALS -->
+    <div id="modal-english" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" onclick="closeModal('modal-english')">&times;</span>
+        <iframe src="./assets/cert-english.pdf#toolbar=0" class="cv-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="modal-tcf" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" onclick="closeModal('modal-tcf')">&times;</span>
+        <iframe src="./assets/cert-tcf.pdf#toolbar=0" class="cv-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="modal-cyber" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" onclick="closeModal('modal-cyber')">&times;</span>
+        <img src="./assets/cert-cybersecurity.png" style="width:100%; border-radius:0.5rem;" />
+      </div>
+    </div>
+
+    <div id="modal-ml" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" onclick="closeModal('modal-ml')">&times;</span>
+        <img src="./assets/cert-ml.png" style="width:100%; border-radius:0.5rem;" />
+      </div>
+    </div>
+
+    <div id="modal-dl" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" onclick="closeModal('modal-dl')">&times;</span>
+        <img src="./assets/cert-deeplearning.png" style="width:100%; border-radius:0.5rem;" />
       </div>
     </div>
 

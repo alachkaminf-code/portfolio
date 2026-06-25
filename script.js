@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectFilters();
   initLightbox();
   initContactForm();
-  initCvModal();
+  initModals();
 });
 
 /* 1. HAMBURGER MENU */
@@ -163,24 +163,35 @@ function initContactForm() {
   });
 }
 
-/* 7. CV MODAL + CERTIFICATE MODALS */
-function initCvModal() {
+/* 7. ALL MODALS (CV + Certificates) */
+function initModals() {
   const allModals = document.querySelectorAll(".cv-modal");
 
+  // global open function — call it from any onclick in HTML
+  window.openModal = (id) => {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.add("open");
+  };
+
+  // global close function
+  window.closeModal = (id) => {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.remove("open");
+  };
+
   allModals.forEach((modal) => {
-    // Close when clicking the X button inside
+    // close on X button click
     const closeBtn = modal.querySelector(".cv-modal-close");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => modal.classList.remove("open"));
     }
-
-    // Close when clicking outside the inner box
+    // close on backdrop click
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("open");
     });
   });
 
-  // Close any open modal with Escape key
+  // close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       allModals.forEach((modal) => modal.classList.remove("open"));
