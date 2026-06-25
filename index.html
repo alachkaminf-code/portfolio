@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Yacine Lachkhem — Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
@@ -44,89 +44,68 @@
         </div>
       </div>
     </nav>
+
     <section id="profile">
       <div class="section__pic-container">
-        <img id="profile-pic"  src="./assets/profile-pic2.png" alt="yacine profile picture" />
+        <img id="profile-pic" src="./assets/profile-pic2.png" alt="Yacine Lachkhem profile picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Yacine Lachkhem</h1>
         <p class="section__text__p2">Full-Stack Developer</p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Yacine_Lachkhem_CV.pdf', '_blank')"
-          >
-            Download CV
+          <button class="btn btn-color-2" onclick="document.getElementById('cv-modal').classList.add('open')">
+            View CV
           </button>
-          <a href="#contact" class="btn btn-color-1">
-            Contact Info
-          </a>
-          
+          <a href="#contact" class="btn btn-color-1">Contact Info</a>
         </div>
         <div id="socials-container">
           <a href="https://www.linkedin.com/in/ahmedyacine-lachkhem-72566b346" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./assets/linkedin.png"
-              alt="My LinkedIn profile"
-              class="icon"
-            />
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" />
           </a>
           <a href="https://github.com/alachkaminf-code" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./assets/github.png"
-              alt="My Github profile"
-              class="icon"
-            />
+            <img src="./assets/github.png" alt="My Github profile" class="icon" />
           </a>
         </div>
       </div>
     </section>
+
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
         <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
         </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
+              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
               <h3>Experience</h3>
-              <p>4+ years <br />Full-StackDevelopment</p>
+              <p>2+ years <br />Full-Stack Development</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
+              <img src="./assets/education.png" alt="Education icon" class="icon" />
               <h3>Education</h3>
-              <p>Bachelor Degree<br /> Licence Degree</p>
+              <p>Bachelor's Degree<br />Computer Science<br />2022 — 2026</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-           This is my portfolio, where I showcase the projects I've built while studying computer science. I'm passionate about frontend development and enjoy turning ideas into clean, functional web applications — from full-stack projects with React and Firebase to lower-level work in C and cryptography. I'm always looking to learn more and take on new challenges.            </p>
+              I'm a Computer Science graduate from Laghouat, Algeria, passionate about building 
+              modern and impactful web applications. Over the past 3 years I've developed strong 
+              skills in React, TypeScript, Firebase, and Tailwind CSS. My main project, EduLingua, 
+              is a full-stack language learning platform combining AI-powered self-study tools with 
+              a real teacher marketplace — built specifically for Arabic speakers learning European 
+              languages. I love solving real problems with clean code and I'm always looking for 
+              the next challenge to grow as a developer.
+            </p>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
     </section>
+
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
@@ -136,70 +115,40 @@
             <h2 class="experience-sub-title">Full-Stack Development</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>HTML</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>CSS</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>JavaScript</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>React</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Advanced</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>TypeScript</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C++</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>Firebase</h3><p>Intermediate</p></div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>Tailwind CSS</h3><p>Intermediate</p></div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>Java</h3><p>Intermediate</p></div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>C++</h3><p>Intermediate</p></div>
               </article>
             </div>
           </div>
@@ -207,60 +156,28 @@
             <h2 class="experience-sub-title">Languages</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>English</h3>
-                  <p>Advanced</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>Arabic</h3><p>Native</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>French</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>English</h3><p>Advanced</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Arabic</h3>
-                  <p>Native</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>French</h3><p>Intermediate</p></div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Spanish</h3>
-                  <p>Basic</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div><h3>Spanish</h3><p>Basic</p></div>
               </article>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
     </section>
+
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
@@ -276,24 +193,23 @@
             <div class="article-container">
               <img
                 src="./assets/project-1.png"
-                alt="LinguaLearn app screenshot"
+                alt="EduLingua app screenshot"
                 class="project-img"
                 onclick="openLightbox('./assets/project-1.png')"
               />
             </div>
-            <h2 class="experience-sub-title project-title">LinguaLearn</h2>
-            <p class="project-description">React + TypeScript + Firebase language learning app with AI chatbot, quizzes, and CEFR placement test.</p>
+            <h2 class="experience-sub-title project-title">EduLingua</h2>
+            <p class="project-description">
+              Full-stack language learning platform built with React, TypeScript & Firebase. 
+              Features an AI chatbot tutor, flashcards, quizzes, speaking practice, CEFR placement test, 
+              and a teacher marketplace with 1-on-1 booking — designed for Arabic speakers learning European languages.
+              <br /><span style="font-size:0.8rem; color: gray;">2025 — 2026</span>
+            </p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/alachkaminf-code/lingualearn', '_blank')"
-              >
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/alachkaminf-code/lingualearn', '_blank')">
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://lingualearn-ruby.vercel.app/', '_blank')"
-              >
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://lingualearn-ruby.vercel.app/', '_blank')">
                 Live Demo
               </button>
             </div>
@@ -308,14 +224,10 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">Project Two</h2>
-            <p class="project-description">Coming soon.</p>
+            <p class="project-description">Coming soon — in progress.</p>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn">
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" disabled style="opacity:0.4;cursor:not-allowed;">Github</button>
+              <button class="btn btn-color-2 project-btn" disabled style="opacity:0.4;cursor:not-allowed;">Live Demo</button>
             </div>
           </div>
           <div class="details-container color-container project-card" data-tags="html-css">
@@ -328,43 +240,27 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">Project Three</h2>
-            <p class="project-description">Coming soon.</p>
+            <p class="project-description">Coming soon — in progress.</p>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn">
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" disabled style="opacity:0.4;cursor:not-allowed;">Github</button>
+              <button class="btn btn-color-2 project-btn" disabled style="opacity:0.4;cursor:not-allowed;">Live Demo</button>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
     </section>
+
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
+          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
           <p><a href="mailto:lachkhemahmedyacine@gmail.com">lachkhemahmedyacine@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
+          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
           <p><a href="https://www.linkedin.com/in/ahmedyacine-lachkhem-72566b346" target="_blank">LinkedIn</a></p>
         </div>
       </div>
@@ -387,6 +283,7 @@
         <p id="form-status" class="form-status"></p>
       </form>
     </section>
+
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -398,12 +295,21 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &copy;2026  Lachkhem. All Rights Reserved.</p>
+      <p>Copyright &copy; 2026 Yacine Lachkhem. All Rights Reserved.</p>
     </footer>
 
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox">
       <span class="lightbox-close" id="lightbox-close">&times;</span>
       <img id="lightbox-img" src="" alt="Project preview" class="lightbox-img" />
+    </div>
+
+    <!-- CV MODAL -->
+    <div id="cv-modal" class="cv-modal">
+      <div class="cv-modal-inner">
+        <span class="cv-modal-close" id="cv-modal-close">&times;</span>
+        <iframe src="./assets/CV_yacine_lachkhem.pdf#toolbar=0" class="cv-iframe"></iframe>
+      </div>
     </div>
 
     <script src="script.js"></script>
