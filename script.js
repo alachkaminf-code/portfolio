@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initModals();
   initTypingEffect();
   initSkillBars();
+  initCounters();
+  initBackToTop();
 });
 
 /* 1. HAMBURGER MENU */
@@ -258,4 +260,67 @@ function initSkillBars() {
     { threshold: 0.3 }
   );
   bars.forEach((bar) => observer.observe(bar));
+}
+/* 10. COUNTER ANIMATION (About section) */
+function initCounters() {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || "";
+    const isRange = el.dataset.format === "range";
+    const end = isRange ? parseInt(el.dataset.end, 10) : null;
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+
+      if (isRange) {
+        const current = Math.round(target + (end - target) * eased);
+        el.textContent = `${current}`;
+        if (progress >= 1) el.textContent = `${target}-${end}`;
+      } else {
+        const current = Math.round(target * eased);
+        el.textContent = `${current}${suffix}`;
+      }
+
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+}
+/* 11. BACK TO TOP BUTTON */
+function initBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
