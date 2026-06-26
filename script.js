@@ -7,6 +7,7 @@
    5. Image lightbox
    6. Contact form (Formspree)
    7. CV modal + Certificate modals
+   8. Typing animation on hero title
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLightbox();
   initContactForm();
   initModals();
+  initTypingEffect();
 });
 
 /* 1. HAMBURGER MENU */
@@ -167,34 +169,74 @@ function initContactForm() {
 function initModals() {
   const allModals = document.querySelectorAll(".cv-modal");
 
-  // global open function — call it from any onclick in HTML
   window.openModal = (id) => {
     const modal = document.getElementById(id);
     if (modal) modal.classList.add("open");
   };
 
-  // global close function
   window.closeModal = (id) => {
     const modal = document.getElementById(id);
     if (modal) modal.classList.remove("open");
   };
 
   allModals.forEach((modal) => {
-    // close on X button click
     const closeBtn = modal.querySelector(".cv-modal-close");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => modal.classList.remove("open"));
     }
-    // close on backdrop click
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("open");
     });
   });
 
-  // close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       allModals.forEach((modal) => modal.classList.remove("open"));
     }
   });
+}
+
+/* 8. TYPING ANIMATION ON HERO TITLE */
+function initTypingEffect() {
+  const el = document.getElementById("typing-text");
+  if (!el) return;
+
+  const phrases = ["Full-Stack Developer", "React Developer", "Problem Solver"];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const TYPE_SPEED = 90;
+  const DELETE_SPEED = 45;
+  const PAUSE_AFTER_TYPE = 1800;
+  const PAUSE_AFTER_DELETE = 400;
+
+  function tick() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting) {
+      charIndex++;
+      el.textContent = currentPhrase.substring(0, charIndex);
+
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(tick, PAUSE_AFTER_TYPE);
+        return;
+      }
+      setTimeout(tick, TYPE_SPEED);
+    } else {
+      charIndex--;
+      el.textContent = currentPhrase.substring(0, charIndex);
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(tick, PAUSE_AFTER_DELETE);
+        return;
+      }
+      setTimeout(tick, DELETE_SPEED);
+    }
+  }
+
+  tick();
 }
