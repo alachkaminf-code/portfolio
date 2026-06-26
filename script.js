@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initModals();
   initTypingEffect();
+  initSkillBars();
 });
 
 /* 1. HAMBURGER MENU */
@@ -239,4 +240,22 @@ function initTypingEffect() {
   }
 
   tick();
+}
+
+/* 9. SKILL BAR ANIMATION ON SCROLL */
+function initSkillBars() {
+  const bars = document.querySelectorAll(".skill-bar-fill");
+  if (!bars.length) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("filled");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  bars.forEach((bar) => observer.observe(bar));
 }
